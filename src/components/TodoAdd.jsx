@@ -1,20 +1,11 @@
 import React, { useState } from 'react'
 
-const TodoAdd = ({ todoId, todoItems, setTodoItems }) => {
-  const [userInput, setUserInput] = useState({})
+const TodoAdd = ({ todoAddHandler }) => {
+  const [userInput, setUserInput] = useState({ date: '', content: '' })
 
   const inputHandler = (event) => {
     const { value, name } = event.target
-    setUserInput({ ...userInput, [name]: value })
-  }
-
-  const todoAddHandler = (userInput, e) => {
-    e.preventDefault()
-    setTodoItems([
-      ...todoItems,
-      { id: todoId.current, date: userInput.date, content: userInput.content, done: false }
-    ])
-    todoId.current += 1
+    setUserInput({ ...userInput, [name]: value, done: false })
   }
 
   return (

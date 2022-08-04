@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TodoItem = ({ todos, todoRemoveHandler, todoDoneHandler, done }) => {
+const TodoItem = ({ todos, todoRemoveHandler, todoDoneHandler }) => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       {todos.done && <p>완료!</p>}
